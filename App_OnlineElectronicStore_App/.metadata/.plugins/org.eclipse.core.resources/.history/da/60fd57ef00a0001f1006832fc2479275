@@ -1,0 +1,32 @@
+package pack1;
+
+import java.security.DomainCombiner;
+
+public class Classa 
+
+{
+	@Override
+	public void run()
+	{
+		criticalResource();
+	}
+	synchronized void criticalResource()
+	{
+		String name=Thread.currentThread().getName();
+		System.out.println(name+"entered critical resourse");
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println(name+""+i);
+		}
+		System.out.println(name+"completed exeption");
+	}
+public static void main(String[]args)
+{
+	Classa aobj= new Classa();
+	Thread t1=new Thread(aobj);
+	aobj.setName("1st thread");
+}
+
+	}
+
+}
